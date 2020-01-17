@@ -95,8 +95,11 @@ for i in range(temp[0]):
     temp[1][i]=cv2.resize(temp[1][i],(500,500))
 while 1:
     i=random.randint(0,temp[0]-1)
-    cv2.imshow('face',temp[1][i])
-    cv2.moveWindow('face',600,200)
+    try:
+        cv2.imshow('face',temp[1][i])
+        cv2.moveWindow('face',600,200)
+    except:
+        pass
     if cv2.waitKey(10) == ord('s'):
         break
 
